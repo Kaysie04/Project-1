@@ -8,7 +8,7 @@ const parkOptions = {
     }
 };
 
-var parkUrl =  'https://jonahtaylor-national-park-service-v1.p.rapidapi.com/parks?q=arches%20national%20park' 
+var parkUrl =  'https://jonahtaylor-national-park-service-v1.p.rapidapi.com/parks' 
 
 function getPark () {
     fetch( parkUrl, parkOptions)
@@ -16,7 +16,7 @@ function getPark () {
     .then(response =>  {
              return response.json() })
         .then(data => {
-            console.log(data.data)
+            console.log(data)
 
         // var parkList = document.querySelector(".park-list")
         // var parkListData = document.createElement("p")

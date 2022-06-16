@@ -1,3 +1,10 @@
+var getParkName = document.getElementById("getParkName")
+var  getAddress= document.getElementById("getAddress")
+var getHours = document.getElementById("getHours")
+var parkWeatherInfo = document.getElementById("park-weather-info")
+var searchInputEl = document.getElementById("user-search")
+var searchBtn = document.getElementById("search-btn")
+
 const APIKeyWeather = "2e27f5eeea840778c702353221406";
 const APIKeyPark = "yVqeZRUKh9PqcUDw5hZeYAUCPybXvqL3cGbSjcIh"
 const parkOptions = {
@@ -8,7 +15,7 @@ const parkOptions = {
     }
 };
 
-var parkUrl =  'https://jonahtaylor-national-park-service-v1.p.rapidapi.com/parks' 
+var parkUrl = 'https://jonahtaylor-national-park-service-v1.p.rapidapi.com/parks?parkCode=arches' 
 
 function getPark () {
     fetch( parkUrl, parkOptions)
@@ -17,15 +24,39 @@ function getPark () {
              return response.json() })
         .then(data => {
             console.log(data)
+            
+            // create a variable and element for the park name and append it to the correct html div
+            var parkName = document.createElement("p")
+            parkName.innerHTML = data.data[0].fullName
+            getParkName.append(parkName)
 
-        // var parkList = document.querySelector(".park-list")
-        // var parkListData = document.createElement("p")
-        // parkListData.innerHTML = data.data[0-28]
-        // parkList.append(parkListData)
+            // create a variable and element for the park address and append it to the correct html div
+            var address = document.createElement("p")
+            var street = data.data[0].addresses[0].line1
+            var city = data.data[0].addresses[0].city
+            var state = data.data[0].addresses[0].stateCode
+            var postalCode = data.data[0].addresses[0].postalCode
+            address.innerHTML = `${street} ${city} ${state} ${postalCode}`
+            getAddress.append(address)
+
+            // create a variable and element for the park hours and append it to the correct html div
+            var hoursOfOperation = document.createElement("p")
+            hoursOfOperation.innerHTML = data.data[0].operatingHours[0].description
+            getHours.append(hoursOfOperation)
+
+            // create a variable and element for the park weather description from park API and append it to the correct html div
+            var parkWeather = document.createElement("p")
+            parkWeather.innerHTML = data.data[0].weatherInfo
+            parkWeatherInfo.append(parkWeather)
+            
          })
         //.catch(err => console.error(err));
 
 }
 
+searchBtn.addEventListener("click", function() { 
+    userSearch = searchInputEl.value
+    getWeatherData(userSearch);
+})
 getPark()
 

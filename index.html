@@ -5,8 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 1</title>
+
     <link rel="stylesheet" href="assets/css/sstyles.css">
     <link type="text/css" rel="stylesheet" href="/assets/css/groundwork-master/">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
 </head>
 <header>
     <div class="top">
@@ -15,8 +19,13 @@
         </div>
         <div class="searchbar">
             <form action="">
+
                 <input type="text" placeholder="Search Parks.." name="search">
                 <button class="blue button" href="#">Search</button>
+
+                <input type="text" placeholder="Search Parks.."name="search" id="user-search">
+                <button class="blue button" id="search-btn">Search</button>
+
             </form>
         </div>
     </div>
@@ -27,9 +36,16 @@
         <div id="parkInfo" class="parkInfo">
             <h3>PARK INFO</h3>
             <ol>
+
                 <p id="getParkName" >GET- PARK NAME </p>
                 <p id="getAddress" >GET- ADDRESS</p>
                 <p id="getHours" >GET- HOURS OF OPERATION</p>
+
+                <div id="getParkName"> </div>
+                <div id="getAddress"></div>
+                <div id="getHours"></div>
+                <div id="park-weather-info"></div>
+
                 <p id="getEntryFee" >GET- ENTRY FEE</p>
             </ol>
         </div>

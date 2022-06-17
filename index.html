@@ -16,7 +16,8 @@
             <p>TRAVEL AND KNOW WHAT TO PREPARE</p>
         </div>
         <div class="searchbar">
-            <form>
+            <form id="search-form">
+                <p id="error-display"></p>
                 <input class="park-input" type="text" placeholder="Search Parks.." id=user-search>
                 <button class="button" id="search-btn">Search</button>
             </form>
@@ -31,6 +32,14 @@
     <div class="parkLocation">
         <div id="parkInfo" class="parkDetail">
             <h3>PARK INFO</h3>
+
+            <div class="detail">
+                <p id="getParkName"></p>
+                <p id="getAddress"></p>
+                <p id="getHours"></p>
+                <p id="park-weather-info"></p>
+                <p id="getEntryFee"></p>
+
             <ol>
                 <div class="detail" id="getParkName">name</div>
                 <div class="detail" id="getAddress">address</div>
@@ -39,44 +48,69 @@
                 <div class="detail" id="getEntryFee">fee</div>
             </ol>
 
+
         </div>
     </div>
     <div class="map" id="map">
-        <!--<iframe
-  width="450"
-  height="250"
-  frameborder="0" style="border:0"
-  referrerpolicy="no-referrer-when-downgrade"
-  src="https://www.google.com/maps/"
-  allowfullscreen>
-</iframe>-->
+
     </div>
     <div class="weatherInfo">
         <div class="currentDayWeather">
-            <h2>TODAYS FORECAST</h2>
+            <h2>Today</h2>
+        </div>
+        <div id="currentWeather">
+            <p id="currentTemp"></p>
+            <p id="feelsLike"></p>
+            <p id="humidity"></p>
+            <p id="wind"></p>
+            <p id="uv"></p>
         </div>
 
         <table class="forecast u-ful-width" >
 
         <thead>
             <tr>
-                <th >DAY</th>
-                <th >TEMPATURE</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             <tr id="day1">
-                <td id="weatherInfo1">day</td>
+                <td id="weatherInfo1">
+                    <p id="day1-date"></p>
+                    <p id="day1-temp"></p>
+                    <p id="day1-humidity"></p>
+                    <p id="day1-wind"></p>
+                    <p id="day1-uv"></p>
+                </td>
             </tr>
             <tr id="day2">
-                <td id="weatherInfo2">day</td>
+                <td id="weatherInfo2">
+                    <p id="day2-date"></p>
+                    <p id="day2-temp"></p>
+                    <p id="day2-humidity"></p>
+                    <p id="day2-wind"></p>
+                    <p id="day2-uv"></p>
+                </td>
             </tr>
             <tr id="day3">
-                <td id="weatherInfo3">day</td>
+                <td id="weatherInfo3"></td>
             </tr>
+
+            <tr id="day4">
+                <td id="weatherInfo4"></td>
+            </tr>
+            <tr id="day5">
+                <td id="weatherInfo5"></td>
+            </tr>
+
+ 
         </tbody>
     </table>
     </div>
+
+
+    <div id="testing-weather-data"></div>
 </main>
 <script src="assets/js/script.js"></script>
 </body>

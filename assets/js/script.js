@@ -19,18 +19,23 @@ const parkOptions = {
     }
 };
 
-
 function getPark (userSearch) {
     var parkUrl = `https://jonahtaylor-national-park-service-v1.p.rapidapi.com/parks?parkCode=${userSearch}`
     fetch( parkUrl, parkOptions)
     .then(response =>  {
-             return response.json() })
-        .then(data => {
-            console.log(data)
+        if (userSearch.length <=3) { 
+             var errorDisplay = document.getElementById("error-display")
+             //var searchFormEl = document.getElementById("search-form")
+             errorDisplay.innerHTML = "Invalid Park Name"
+             searchInputEl.reset() 
+        
+        } else {return response.json ()}
+     })  
+             .then(data => {
             var lat = data.data[0].latitude
             var long = data.data[0].longitude
             var latLong = `${lat},${long}`
-           
+             
             // create a variable and element for the park name and append it to the correct html div
             getParkName.innerHTML = data.data[0].fullName
 
@@ -59,7 +64,7 @@ function getPark (userSearch) {
             .then(response => {
                 return response.json() })
                 .then(data => {
-                    console.log(data)
+
                
                 //TODAY'S WEATHER
                
@@ -117,10 +122,12 @@ function getPark (userSearch) {
                  var dayTwoUv = document.getElementById("day2-uv")
                  dayTwoUv.innerHTML = `UV Index: ${data.forecast.forecastday[2].day.uv}`
             })
-            
-         })
-        //.catch(err => console.error(err));
+        })
 }
+            
+        
+        //.catch(err => console.error(err));
+
 
 // save to local storage
 
@@ -134,8 +141,10 @@ storageInput.addEventListener('input', letter => {
 })
 
 const saveToLocalStorage = () => {
+    if (textinput.lenght >=4)
     localStorage.setItem('textinput', text.textContent)
 }
+
 
 searchBtn.addEventListener('click', saveToLocalStorage)
 
@@ -143,7 +152,6 @@ searchBtn.addEventListener('click', saveToLocalStorage)
 searchBtn.addEventListener("click", function(event) {
     userSearch = searchInputEl.value
     getPark(userSearch)
-    searchInputEl.innerHTML = " "
     event.preventDefault()
 })
 

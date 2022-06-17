@@ -1,4 +1,9 @@
 
+<<<<<<< HEAD
+window.initMap = initMap;
+export {};
+=======
+>>>>>>> 20c7f0fb9bd06fea39cdb78f5341ff3b477cc836
 var hoursOfOperation = document.getElementById("getHours")
 var entranceFee = document.getElementById("getEntryFee")
 var getParkName = document.getElementById("getParkName")

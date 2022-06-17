@@ -6,14 +6,15 @@ var getAddress= document.getElementById("getAddress")
 var getHours = document.getElementById("getHours")
 var entranceFee = document.getElementById("getEntryFee")
 var parkWeatherInfo = document.getElementById("park-weather-info")
+var weatherDataEl = document.getElementById("testing-weather-data")
 var searchInputEl = document.getElementById("user-search")
 var searchBtn = document.getElementById("search-btn")
-const APIKeyWeather = "2e27f5eeea840778c702353221406";
+const APIKeyWeather = "a4d995d10a3e4d37b4522008221606"
 const APIKeyPark = "yVqeZRUKh9PqcUDw5hZeYAUCPybXvqL3cGbSjcIh"
 
 const parkOptions = {
     headers: {
-        'X-Api-Key': 'yVqeZRUKh9PqcUDw5hZeYAUCPybXvqL3cGbSjcIh',
+        'X-Api-Key': `${APIKeyPark}`,
         'X-RapidAPI-Key': 'cadac08ed3msh40326c56fe6e32bp134535jsn59a066c9993d',
         'X-RapidAPI-Host': 'jonahtaylor-national-park-service-v1.p.rapidapi.com'
     }
@@ -26,14 +27,13 @@ function getPark (userSearch) {
     .then(response =>  {
              return response.json() })
         .then(data => {
-
-            console.log(data.data)
-            //var entranceFee = document.createElement("p")
-            var parkCost = data.data[0].entranceFees[0].cost
-            var parkDescription = data.data[0].entranceFees[0].description
-            var parkTitle = data.data[0].entranceFees[0].title
-            getEntryFee.innerHTML = `Entrance Fee: $${parkCost} ${parkDescription}` //${parkTitle}`
-
+            //console.log(data.data[0])
+            var lat = data.data[0].latitude
+            var long = data.data[0].longitude
+            var latLong = `${lat},${long}`
+            console.log(latLong)
+           
+           
             // create a variable and element for the park name and append it to the correct html div
             getParkName.innerHTML = data.data[0].fullName
 
@@ -49,54 +49,53 @@ function getPark (userSearch) {
 
             // create a variable and element for the park weather description from park API and append it to the correct html div
             parkWeatherInfo.innerHTML = `Seasonal Weather Info: ${data.data[0].weatherInfo}`
+
+              //var entranceFee = document.createElement("p")
+              var parkCost = data.data[0].entranceFees[0].cost
+              var parkDescription = data.data[0].entranceFees[0].description
+              getEntryFee.innerHTML = `Entrance Fee: $${parkCost} ${parkDescription}`
+
+              
+        var weatherUrl = `http://api.weatherapi.com/v1/forecast.json?key=${APIKeyWeather}&q=${latLong}`
+
+        fetch(weatherUrl)
+            .then(response => {
+                return response.json() })
+                .then(data => {
+                    console.log(data)
+                // icon
+                // var weatherIcon = data.current.condition.icon
+                // weatherIconImg = document.createElement("img")
+                // weatherIconImg.setAttribute("src", "//cdn.weatherapi.com/weather/64x64/night/113.png")
+                // weatherDataEl.append(weatherIconImg)
+                // current temp
+                var currentTemp = document.createElement("p")
+                currentTemp.innerHTML = ` Temp: ${data.current.temp_f} ${"\u00B0F"}`
+                weatherDataEl.append(currentTemp)
+                // feels like temp
+                var feelsLike = document.createElement("p")
+                feelsLike.innerHTML = ` Feels Like: ${data.current.feelslike_f} ${"\u00B0F"}`
+                weatherDataEl.append(feelsLike)
+                // humidity
+                var humidity = document.createElement("p")
+                humidity.innerHTML = ` Humidity: ${data.current.humidity}${"%"}`
+                weatherDataEl.append(humidity)
+                // wind
+                var wind = document.createElement("p")
+                wind.innerHTML = ` Wind: ${data.current.wind_mph}${"mph"}`
+                weatherDataEl.append(wind)
+                // uv
+                var wind = document.createElement("p")
+                wind.innerHTML = `UV Index: ${data.current.uv}`
+                weatherDataEl.append(wind)
+            })
             
          })
         //.catch(err => console.error(err));
 }
+
 searchBtn.addEventListener("click", function() {
     userSearch = searchInputEl.value
-    getPark(userSearch);
+    getPark(userSearch)
     event.preventDefault()
 })
-
-
-
-// function getWeatherData () {
-
-//   const APIKeyWeather = "a4d995d10a3e4d37b4522008221606"
-//   var weatherUrl = "http://api.weatherapi.com/v1/future.json?key=a4d995d10a3e4d37b4522008221606&q=dallas&dt=2022-07-1"
-
-  
-//   fetch(weatherUrl)
-//       .then(response => {
-//           return response.json() })
-//           .then(data => {
-//               console.log(data)
-//           // icon
-//           // var weatherIcon = data.current.condition.icon
-//           // weatherIconImg = document.createElement("img")
-//           // weatherIconImg.setAttribute("src", "//cdn.weatherapi.com/weather/64x64/night/113.png")
-//           // weatherDataEl.append(weatherIconImg)
-//           // current temp
-//           var currentTemp = document.createElement("p")
-//           currentTemp.innerHTML = ` Temp: ${data.current.temp_f} ${"\u00B0F"}`
-//           weatherDataEl.append(currentTemp)
-//           // feels like temp
-//           var feelsLike = document.createElement("p")
-//           feelsLike.innerHTML = ` Feels Like: ${data.current.feelslike_f} ${"\u00B0F"}`
-//           weatherDataEl.append(feelsLike)
-//           // humidity
-//           var humidity = document.createElement("p")
-//           humidity.innerHTML = ` Humidty: ${data.current.humidity}${"%"}`
-//           weatherDataEl.append(humidity)
-//           // wind
-//           var wind = document.createElement("p")
-//           wind.innerHTML = ` Wind: ${data.current.wind_mph}${"mph"}`
-//           weatherDataEl.append(wind)
-//           // uv
-//           var wind = document.createElement("p")
-//           wind.innerHTML = `UV Index: ${data.current.uv}`
-//           weatherDataEl.append(wind)
-//       })
-// }
-

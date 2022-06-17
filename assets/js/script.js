@@ -59,6 +59,21 @@ searchBtn.addEventListener("click", function() {
     event.preventDefault()
 })
 
+const storageInput = document.querySelector('#user-search')
+const text = document.querySelector('.park-input')
+const storedInput = localStorage.getItem('text')
+
+storageInput.addEventListener('input', letter => {
+    text.textContent = letter.target.value
+
+})
+
+const saveToLocalStorage = () => {
+    localStorage.setItem('textinput', text.textContent)
+}
+
+searchBtn.addEventListener('click', saveToLocalStorage)
+
 
 
 // function getWeatherData () {

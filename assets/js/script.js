@@ -1,11 +1,6 @@
 
-<<<<<<< HEAD
-window.initMap = initMap;
-export {};
-=======
->>>>>>> 20c7f0fb9bd06fea39cdb78f5341ff3b477cc836
-var hoursOfOperation = document.getElementById("getHours")
-var entranceFee = document.getElementById("getEntryFee")
+// window.initMap = initMap;
+// export {};
 var getParkName = document.getElementById("getParkName")
 var getAddress= document.getElementById("getAddress")
 var getHours = document.getElementById("getHours")
@@ -146,7 +141,7 @@ storageInput.addEventListener('input', letter => {
 })
 
 const saveToLocalStorage = () => {
-    if (textinput.lenght >=4)
+    if (textinput.length >=4)
     localStorage.setItem('textinput', text.textContent)
 }
 

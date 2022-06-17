@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta http-equiv="X-UA-Compatible" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 1</title>
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -10,7 +11,6 @@
 </head>
 <!-- HEADER -->
 <header class="earth">
-    <div class="top">
         <div class="header">
             <h1 class="weatherTitle">NATIONAL PARK WEATHER</h1>
             <p>TRAVEL AND KNOW WHAT TO PREPARE</p>
@@ -24,19 +24,31 @@
         </div>
     </div>
 </header>
+
+
 <!-- BODY -->
 <body>
 <main>
     <div class="parkLocation">
         <div id="parkInfo" class="parkDetail">
             <h3>PARK INFO</h3>
+
             <div class="detail">
                 <p id="getParkName"></p>
                 <p id="getAddress"></p>
                 <p id="getHours"></p>
                 <p id="park-weather-info"></p>
                 <p id="getEntryFee"></p>
-            </div>
+
+            <ol>
+                <div class="detail" id="getParkName">name</div>
+                <div class="detail" id="getAddress">address</div>
+                <div class="detail" id="getHours">hours</div>
+                <div class="detail" id="park-weather-info">temp</div>
+                <div class="detail" id="getEntryFee">fee</div>
+            </ol>
+
+
         </div>
     </div>
     <div class="map" id="map">
@@ -53,7 +65,9 @@
             <p id="wind"></p>
             <p id="uv"></p>
         </div>
-        <table class="u-ful-width" >
+
+        <table class="forecast u-ful-width" >
+
         <thead>
             <tr>
                 <th></th>
@@ -82,12 +96,15 @@
             <tr id="day3">
                 <td id="weatherInfo3"></td>
             </tr>
+
             <tr id="day4">
                 <td id="weatherInfo4"></td>
             </tr>
             <tr id="day5">
                 <td id="weatherInfo5"></td>
             </tr>
+
+ 
         </tbody>
     </table>
     </div>

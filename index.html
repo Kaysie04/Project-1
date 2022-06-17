@@ -1,17 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=“en”>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=“UTF-8">
+    <meta http-equiv=“X-UA-Compatible” content=“IE=edge”>
+    <meta name=“viewport” content=“width=device-width, initial-scale=1.0">
     <title>Project 1</title>
-    <link rel="stylesheet" href ="assets/css/groundwork-master">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    
+    <link rel=“stylesheet” href=“assets/css/styles.css”>
+    <link rel=“stylesheet” href =“assets/css/Skeleton-2.0.4/“>
 </head>
+<!-- HEADER -->
+<header class=“earth”>
+    <div class=“top”>
+        <div class=“header”>
+            <h1 class=“weatherTitle”>NATIONAL PARK WEATHER</h1>
+            <p>TRAVEL AND KNOW WHAT TO PREPARE</p>
+        </div>
+        <div class=“searchbar”>
+            <form>
+                <input class=“park-input” type=“text” placeholder=“Search Parks..” id=user-search>
+                <button class=“button” id=“search-btn”>Search</button>
+            </form>
+        </div>
+    </div>
+</header>
+<!-- BODY -->
 <body>
-    <div class="park-list"></div>
-    
-<script src="assets/js/script.js"></script>
+<main class=“row”>
+    <div class=“parkLocation”>
+        <div id=“parkInfo” class=“parkInfo”>
+            <h3>PARK INFO</h3>
+            <ol>
+                <div id=“getParkName”> </div>
+                <div id=“getAddress”></div>
+                <div id=“getHours”></div>
+                <div id=“park-weather-info”></div>
+                <div id=“getEntryFee”></div>
+            </ol>
+        </div>
+    </div>
+    <div class=“map” id=“map”>
+        <!--<iframe
+  width=“450"
+  height=“250”
+  frameborder=“0" style=“border:0”
+  referrerpolicy=“no-referrer-when-downgrade”
+  src=“https://www.google.com/maps/”
+  allowfullscreen>
+</iframe>-->
+    </div>
+    <div class=“weatherInfo”>
+        <div class=“currentDayWeather”>
+            <h2>TODAYS FORECAST</h2>
+        </div>
+        <table class=“u-ful-width” >
+        <thead>
+            <tr>
+                <th >DAY</th>
+                <th >TEMPATURE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id=“day1”>
+                <td id=“weatherInfo1">day</td>
+            </tr>
+            <tr id=“day2”>
+                <td id=“weatherInfo2">day</td>
+            </tr>
+            <tr id=“day3”>
+                <td id=“weatherInfo3">day</td>
+            </tr>
+            <tr id=“day4”>
+                <td id=“weatherInfo4">day</td>
+            </tr>
+            <tr id=“day5”>
+                <td id=“weatherInfo5">day</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</main>
+<script src=“assets/js/script.js”></script>
 </body>
 </html>

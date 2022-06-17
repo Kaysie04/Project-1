@@ -26,11 +26,11 @@ function getPark (userSearch) {
     .then(response =>  {
              return response.json() })
         .then(data => {
-            //console.log(data.data[0])
+            console.log(data)
             var lat = data.data[0].latitude
             var long = data.data[0].longitude
             var latLong = `${lat},${long}`
-            
+           
             // create a variable and element for the park name and append it to the correct html div
             getParkName.innerHTML = data.data[0].fullName
 
@@ -122,10 +122,30 @@ function getPark (userSearch) {
         //.catch(err => console.error(err));
 }
 
+// save to local storage
+
+const storageInput = document.querySelector('#user-search')
+const text = document.querySelector('.park-input')
+const storedInput = localStorage.getItem('text')
+
+storageInput.addEventListener('input', letter => {
+    text.textContent = letter.target.value
+
+})
+
+const saveToLocalStorage = () => {
+    localStorage.setItem('textinput', text.textContent)
+}
+
+searchBtn.addEventListener('click', saveToLocalStorage)
+
+// fetch data based on park name search
 searchBtn.addEventListener("click", function(event) {
     userSearch = searchInputEl.value
     getPark(userSearch)
     searchInputEl.innerHTML = " "
     event.preventDefault()
-    
 })
+
+
+

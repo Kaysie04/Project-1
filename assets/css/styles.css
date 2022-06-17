@@ -1,0 +1,75 @@
+* {
+    cursor: cell;
+    font-family: Lucida Sans Typewriter,Lucida Typewriter,sans-serif;
+}
+body {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:column ;
+    margin: 0%;
+
+}
+@media screen and (min-width: 770px) {
+
+.earth {
+    background-image: url("https://media4.giphy.com/media/UTqVVxyukfeiUZ9EDa/giphy.gif");
+    height: fit-content;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+}
+.header h1{
+    font-size: 40px;
+    color:mistyrose;
+    margin-right: 20;
+}
+.header p {
+    color:mistyrose;
+}
+.searchbar {
+    padding: 20px;
+    float: right;
+}
+.button {
+    color: aliceblue;
+    background-color: maroon;
+}
+.top {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.parkDetail{
+    text-align: center;
+    display: table;
+    float:left;
+    background-image: url("https://c.tenor.com/pwks_QPpbvoAAAAd/sky-night.gif");
+    background-size:cover;
+    opacity: 0.8;
+    color: mistyrose;
+    border-style: hidden;
+}
+.detail {
+    float: left;
+    width: 33.33%;
+    padding: 15px;
+    color: mistyrose;
+}
+.currentDayWeather {
+    background-color: blue;
+    height: fit-content;
+    background-size: cover;
+    background-position: center;
+    float: right;
+}
+.forecast {
+    background-color: red;
+
+    height: fit-content;
+    background-size: cover;
+    background-position: center;
+}
+th{
+    font-size: 22px;
+}
+}

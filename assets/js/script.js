@@ -125,10 +125,6 @@ function getPark (userSearch) {
         })
 }
             
-        
-        //.catch(err => console.error(err));
-
-
 // save to local storage
 
 const storageInput = document.querySelector('#user-search')

@@ -60,18 +60,9 @@ function getPark (userSearch) {
                 return response.json() })
                 .then(data => {
                     console.log(data)
-                    
-                // icon
-                // var weatherIcon = data.current.condition.icon
-                // weatherIconImg = document.createElement("img")
-                // weatherIconImg.setAttribute("src", "//cdn.weatherapi.com/weather/64x64/night/113.png")
-                // weatherDataEl.append(weatherIconImg)
-
-               
                
                 //TODAY'S WEATHER
-
-                // current temp
+               
                 var currentTemp = document.getElementById("currentTemp")
                 currentTemp.innerHTML = ` Temp: ${data.current.temp_f} ${"\u00B0F"}`
         
@@ -92,9 +83,11 @@ function getPark (userSearch) {
                 uvIndex.innerHTML = `UV Index: ${data.current.uv}`
 
                 // DAY 1 WEATHER
-                var dayOneDate = document.getElementById("day1-date")
-                dayOneDate.innerHTML = `${data.forecast.forecastday[1].date}`
-
+                // let date = new Date(`${data.forecast.forecastday[1].date_epoch * 1000}`)
+                // console.log(date)
+                // // var dayOneDate = document.getElementById("day1-date")
+                // // dayOneDate.innerHTML =  date
+                
                 var dayOneTemp = document.getElementById("day1-temp")
                 dayOneTemp.innerHTML = ` Average Temp: ${data.forecast.forecastday[1].day.avgtemp_f}${"\u00B0F"}`
 
@@ -108,6 +101,7 @@ function getPark (userSearch) {
                 dayOneUv.innerHTML = `UV Index: ${data.forecast.forecastday[1].day.uv}`
 
                  // DAY 2 WEATHER
+
                  var dayTwoDate = document.getElementById("day2-date")
                  dayTwoDate.innerHTML = `${data.forecast.forecastday[2].date}`
  
@@ -128,8 +122,10 @@ function getPark (userSearch) {
         //.catch(err => console.error(err));
 }
 
-searchBtn.addEventListener("click", function() {
+searchBtn.addEventListener("click", function(event) {
     userSearch = searchInputEl.value
     getPark(userSearch)
+    searchInputEl.innerHTML = " "
     event.preventDefault()
+    
 })

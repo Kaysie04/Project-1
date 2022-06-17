@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:column ;
+}
+.weatherTitle{
+    font-size: 30px;
+}
+.searchbar {
+    padding: 20px;
+    float: right;
+}
+.top {
+    background-size: cover;
+    background-image: url("/images/flying-birds.gif") ;    
+    background-position: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+}
+.weeklyForecast {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content:space-between;
+}
+.card {
+    margin: 0 0 20px 0;
+    border: 2px solid;
+    padding: 50px;
+}
+

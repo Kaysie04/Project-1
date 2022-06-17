@@ -145,7 +145,6 @@ const saveToLocalStorage = () => {
     localStorage.setItem('textinput', text.textContent)
 }
 
-
 searchBtn.addEventListener('click', saveToLocalStorage)
 
 // fetch data based on park name search

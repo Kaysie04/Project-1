@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta http-equiv="X-UA-Compatible" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 1</title>
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -10,72 +11,95 @@
 </head>
 <!-- HEADER -->
 <header class="earth">
-    <div class="top">
         <div class="header">
             <h1 class="weatherTitle">NATIONAL PARK WEATHER</h1>
             <p>TRAVEL AND KNOW WHAT TO PREPARE</p>
         </div>
         <div class="searchbar">
-            <form>
-                <input class="park-input" type="text" placeholder="Search Parks.." id=user-search>
+            <form id="search-form">
+                <p id="error-display"></p>
+                <input class="park-input" type="text" id=user-search>
                 <button class="button" id="search-btn">Search</button>
             </form>
         </div>
     </div>
 </header>
+
+
 <!-- BODY -->
 <body>
-<main class="row">
+<main>
     <div class="parkLocation">
-        <div id="parkInfo" class="parkInfo">
-            <h3>PARK INFO</h3>
-            <div>
-                <p id="getParkName"> </p>
+        <h3>PARK INFO</h3>
+        <div id="parkInfo" class="parkDetail">           
+            <div class="detail">
+                <h2 id="getParkName"></h2>
                 <p id="getAddress"></p>
                 <p id="getHours"></p>
                 <p id="park-weather-info"></p>
                 <p id="getEntryFee"></p>
+
+                        <div class="detail">
+                            <p id="getParkName"></p>
+                            <p id="getAddress"></p>
+                            <p id="getHours"></p>
+                            <p id="park-weather-info"></p>
+                            <p id="getEntryFee"></p>
+                        </div>
+            
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="map" id="map">
-        <!--<iframe
-  width="450"
-  height="250"
-  frameborder="0" style="border:0"
-  referrerpolicy="no-referrer-when-downgrade"
-  src="https://www.google.com/maps/"
-  allowfullscreen>
-</iframe>-->
-    </div>
     <div class="weatherInfo">
         <div class="currentDayWeather">
-            <h2>TODAYS FORECAST</h2>
+            <h2>Today</h2>
+        
+            <p id="currentWeather"></p>
+            <p id="currentTemp"></p>
+            <p id="feelsLike"></p>
+            <p id="humidity"></p>
+            <p id="wind"></p>
+            <p id="uv"></p>
         </div>
-        <table class="u-ful-width" >
+        <div class="weatherInfo">
+            <div class="currentDayWeather">
+                <h2>Today</h2>
+            
+                <p id="currentWeather"></p>
+                <p id="currentTemp"></p>
+                <p id="feelsLike"></p>
+                <p id="humidity"></p>
+                <p id="wind"></p>
+                <p id="uv"></p>
+            </div>
+
+        <table class="forecast u-full-width" >
         <thead>
-            <tr>
-                <th >DAY</th>
-                <th >TEMPATURE</th>
+            <tr >
+                <th id="day1"></th>
+                <th id="day2"></th>
             </tr>
-        </thead>
-        <tbody>
-            <tr id="day1">
-                <td id="weatherInfo1">day</td>
+            </thead>
+            <tbody>
+                <tr>
+                <td id="weatherInfo1">
+                    <td id="day1-date"></td>
+                    <td id="day1-temp"></td>
+                    <td id="day1-humidity"></td>
+                    <td id="day1-wind"></td>
+                    <td id="day1-uv"></td>
+                
+                </tr>
+                <tr>
+                <td id="weatherInfo2"></td>
+                    <td id="day2-date"></td>
+                    <td id="day2-temp"></td>
+                    <td id="day2-humidity"></td>
+                    <td id="day2-wind"></td>
+                    <td id="day2-uv"></td>
+                
             </tr>
-            <tr id="day2">
-                <td id="weatherInfo2">day</td>
-            </tr>
-            <tr id="day3">
-                <td id="weatherInfo3">day</td>
-            </tr>
-            <tr id="day4">
-                <td id="weatherInfo4">day</td>
-            </tr>
-            <tr id="day5">
-                <td id="weatherInfo5">day</td>
-            </tr>
-        </tbody>
+            </tbody>
     </table>
     </div>
 </main>

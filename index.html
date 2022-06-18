@@ -30,20 +30,17 @@
 <body>
 <main>
     <div class="parkLocation">
-        <div id="parkInfo" class="parkDetail">
-            <h3>PARK INFO</h3>
-
+        <h3>PARK INFO</h3>
+        <div id="parkInfo" class="parkDetail">           
             <div class="detail">
-                <p id="getParkName"></p>
+                <h2 id="getParkName"></h2>
                 <p id="getAddress"></p>
                 <p id="getHours"></p>
                 <p id="park-weather-info"></p>
                 <p id="getEntryFee"></p>
 
         </div>
-    </div>
-    <div class="map" id="map">
-
+    </div>  
     </div>
     <div class="weatherInfo">
         <div class="currentDayWeather">
@@ -57,35 +54,33 @@
             <p id="uv"></p>
         </div>
 
-        <table class="forecast u-ful-width" >
-
+        <table class="forecast u-full-width" >
         <thead>
-            <tr>
-                <th></th>
-                <th></th>
+            <tr >
+                <th id="day1"></th>
+                <th id="day2"></th>
             </tr>
-        </thead>
-        <tbody>
-            <tr id="day1">
+            </thead>
+            <tbody>
+                <tr>
                 <td id="weatherInfo1">
-                    <p id="day1-date"></p>
-                    <p id="day1-temp"></p>
-                    <p id="day1-humidity"></p>
-                    <p id="day1-wind"></p>
-                    <p id="day1-uv"></p>
-                </td>
+                    <td id="day1-date"></td>
+                    <td id="day1-temp"></td>
+                    <td id="day1-humidity"></td>
+                    <td id="day1-wind"></td>
+                    <td id="day1-uv"></td>
+                
+                </tr>
+                <tr>
+                <td id="weatherInfo2"></td>
+                    <td id="day2-date"></td>
+                    <td id="day2-temp"></td>
+                    <td id="day2-humidity"></td>
+                    <td id="day2-wind"></td>
+                    <td id="day2-uv"></td>
+                
             </tr>
-            <tr id="day2">
-                <td id="weatherInfo2">
-                    <p id="day2-date"></p>
-                    <p id="day2-temp"></p>
-                    <p id="day2-humidity"></p>
-                    <p id="day2-wind"></p>
-                    <p id="day2-uv"></p>
-                </td>
-            </tr>
-
-        </tbody>
+            </tbody>
     </table>
     </div>
 </main>

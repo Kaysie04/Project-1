@@ -12,7 +12,9 @@ var parkDetailEl= document.querySelector(".parkDetail")
 var detailEl = document.querySelector(".detail")
 const APIKeyWeather = "a4d995d10a3e4d37b4522008221606"
 const APIKeyPark = "yVqeZRUKh9PqcUDw5hZeYAUCPybXvqL3cGbSjcIh"
-
+var searchHistory = []
+var userSearch = ""
+var userSearchForm = document.querySelector("#search-form")
 const parkOptions = {
     headers: {
         'X-Api-Key': `${APIKeyPark}`,
@@ -24,19 +26,30 @@ const parkOptions = {
 function getPark (userSearch) {
     var parkUrl = `https://jonahtaylor-national-park-service-v1.p.rapidapi.com/parks?parkCode=${userSearch}`
     fetch( parkUrl, parkOptions)
+    
+    // error response for search values less than 4
     .then(response =>  {
+       
         if (userSearch.length <=3) { 
-             var errorDisplay = document.querySelector(".error-display")
-             errorDisplay.innerHTML = "Invalid park name"
-             errorDisplay.classList.remove("error-display")
-             errorDisplay.setAttribute("class", "error-DisplayLoaded")
-        
-        } else {return response.json ()}
+            window.location.reload()
+            // var errorDisplay = document.createElement("p")
+            // errorDisplay.classList.add("error-DisplayLoaded")
+            // //errorDisplay.classList.remove("error-display")
+            //  errorDisplay.innerHTML = "Invalid park name"
+            //  userSearchForm.append(errorDisplay)
+             
+
+        } else { 
+            return response.json ()}
      })  
              .then(data => {
+            
+            searchHistory.push(data.data[0].fullName)
+            localStorage.setItem("parkName", searchHistory)
             var lat = data.data[0].latitude
             var long = data.data[0].longitude
             var latLong = `${lat},${long}`
+
 
                 // remove css style display:none
             currentDayWeatherEl.classList.remove("currentDayWeather")
@@ -133,34 +146,24 @@ function getPark (userSearch) {
  
                  var dayTwoUv = document.getElementById("day2-uv")
                  dayTwoUv.innerHTML = `UV Index: ${data.forecast.forecastday[2].day.uv}`
+
+                 // reset search input box
+                 var searchHistoryItem = document.querySelector("#user-search")
+                 searchHistoryItem.value = ""
+                 
             })
         })
 }
-            
-// save to local storage
+   
 
-const storageInput = document.querySelector('#user-search')
-const text = document.querySelector('.park-input')
-const storedInput = localStorage.getItem('text')
+// save to storage when search button is clicked
 
-storageInput.addEventListener('input', letter => {
-    text.textContent = letter.target.value
-
-})
-
-const saveToLocalStorage = () => {
-    //if (text.length >= 4)
-    localStorage.setItem('textinput', text.textContent)
-}
-
-searchBtn.addEventListener('click', saveToLocalStorage)
 
 // fetch data based on park name search
+
 searchBtn.addEventListener("click", function(event) {
-    userSearch = searchInputEl.value
-    getPark(userSearch)
     event.preventDefault()
+    userSearch = searchInputEl.value  
+    getPark(userSearch)
 })
-
-
-
+    

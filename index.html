@@ -17,8 +17,8 @@
         </div>
         <div class="searchbar">
             <form id="search-form">
-                <p class="error-display"></p>
-                <input class="park-input" type="text" placeholder="Search Parks.." id=user-search>
+                <p id="error-display"></p>
+                <input class="park-input" type="text" id=user-search>
                 <button class="button" id="search-btn">Search</button>
             </form>
         </div>
@@ -29,64 +29,73 @@
 <!-- BODY -->
 <body>
 <main>
-    <div class="parkLocation">
-        <div id="parkInfo" class="parkDetail">
-            <h3>PARK INFO</h3>
-
-            <div class="detail">
-                <p id="getParkName"></p>
-                <p id="getAddress"></p>
-                <p id="getHours"></p>
-                <p id="park-weather-info"></p>
-                <p id="getEntryFee"></p>
-
-        </div>
-    </div>
-    <div class="map" id="map">
-
-    </div>
-    <div class="weatherInfo">
-        <div class="currentDayWeather">
-            <h2>Today</h2>
+    <div class="container">
         
-            <p id="currentWeather"></p>
-            <p id="currentTemp"></p>
-            <p id="feelsLike"></p>
-            <p id="humidity"></p>
-            <p id="wind"></p>
-            <p id="uv"></p>
+        <div class="row">
+            <div class="nine columns">
+                <div class="parkLocation">
+
+                    <div id="parkInfo" class="parkDetail">
+                        <h3>PARK INFO</h3>
+
+                        <div class="detail">
+                            <p id="getParkName"></p>
+                            <p id="getAddress"></p>
+                            <p id="getHours"></p>
+                            <p id="park-weather-info"></p>
+                            <p id="getEntryFee"></p>
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="map" id="map">
 
-        <table class="forecast u-ful-width" >
+        </div>
+        <div class="weatherInfo">
+            <div class="currentDayWeather">
+                <h2>Today</h2>
+            
+                <p id="currentWeather"></p>
+                <p id="currentTemp"></p>
+                <p id="feelsLike"></p>
+                <p id="humidity"></p>
+                <p id="wind"></p>
+                <p id="uv"></p>
+            </div>
 
-        <thead>
-            <tr>
-                <th></th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr id="day1">
-                <td id="weatherInfo1">
-                    <p id="day1-date"></p>
-                    <p id="day1-temp"></p>
-                    <p id="day1-humidity"></p>
-                    <p id="day1-wind"></p>
-                    <p id="day1-uv"></p>
-                </td>
-            </tr>
-            <tr id="day2">
-                <td id="weatherInfo2">
-                    <p id="day2-date"></p>
-                    <p id="day2-temp"></p>
-                    <p id="day2-humidity"></p>
-                    <p id="day2-wind"></p>
-                    <p id="day2-uv"></p>
-                </td>
-            </tr>
+            <table class="forecast u-ful-width" >
 
-        </tbody>
-    </table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="day1">
+                    <td id="weatherInfo1">
+                        <p id="day1-date"></p>
+                        <p id="day1-temp"></p>
+                        <p id="day1-humidity"></p>
+                        <p id="day1-wind"></p>
+                        <p id="day1-uv"></p>
+                    </td>
+                </tr>
+                <tr id="day2">
+                    <td id="weatherInfo2">
+                        <p id="day2-date"></p>
+                        <p id="day2-temp"></p>
+                        <p id="day2-humidity"></p>
+                        <p id="day2-wind"></p>
+                        <p id="day2-uv"></p>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        </div>
     </div>
 </main>
 <script src="assets/js/script.js"></script>

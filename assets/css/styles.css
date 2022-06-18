@@ -19,20 +19,31 @@ body {
     margin: 0;
 }
 .header h1{
+    text-align:center;
     font-size: 40px;
-    color:mistyrose;
+    color: #f2f2f2;
     margin-right: 20;
 }
 .header p {
-    color:mistyrose;
+    text-align: center;
+    color: #f2f2f2;
 }
 .searchbar {
     padding: 20px;
     float: right;
 }
 .button {
-    color: aliceblue;
-    background-color: maroon;
+    color: #ffe6e6;
+    background-image: linear-gradient(to bottom right, #b30000, #ff3333, #ff8080);
+    border-radius: 7px;
+}
+
+.button:active {
+    background-image: linear-gradient(to bottom right, #0000ff, #3333ff, #4d4dff);
+}
+
+.button:hover {
+    background-image:linear-gradient(to bottom right, #0000ff, #3333ff, #4d4dff);
 }
 .top {
     display: flex;

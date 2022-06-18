@@ -17,7 +17,7 @@
         </div>
         <div class="searchbar">
             <form id="search-form">
-                <p class="error-display"></p>
+                <p id="error-display"></p>
                 <input class="park-input" type="text" id=user-search>
                 <button class="button" id="search-btn">Search</button>
             </form>
@@ -39,9 +39,17 @@
                 <p id="park-weather-info"></p>
                 <p id="getEntryFee"></p>
 
-        </div>
-    </div>  
-    </div>
+                        <div class="detail">
+                            <p id="getParkName"></p>
+                            <p id="getAddress"></p>
+                            <p id="getHours"></p>
+                            <p id="park-weather-info"></p>
+                            <p id="getEntryFee"></p>
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
     <div class="weatherInfo">
         <div class="currentDayWeather">
             <h2>Today</h2>
@@ -53,6 +61,17 @@
             <p id="wind"></p>
             <p id="uv"></p>
         </div>
+        <div class="weatherInfo">
+            <div class="currentDayWeather">
+                <h2>Today</h2>
+            
+                <p id="currentWeather"></p>
+                <p id="currentTemp"></p>
+                <p id="feelsLike"></p>
+                <p id="humidity"></p>
+                <p id="wind"></p>
+                <p id="uv"></p>
+            </div>
 
         <table class="forecast u-full-width" >
         <thead>

@@ -29,18 +29,18 @@ function getPark (userSearch) {
     
     // error response for search values less than 4
     .then(response =>  {
-        var errorDisplay = document.querySelector(".error-display")
+       
         if (userSearch.length <=3) { 
-            errorDisplay.classList.remove("error-display")
-             errorDisplay.innerHTML = "Invalid park name"
-             errorDisplay.setAttribute("class", "error-DisplayLoaded")
-    
+            window.location.reload()
+            // var errorDisplay = document.createElement("p")
+            // errorDisplay.classList.add("error-DisplayLoaded")
+            // //errorDisplay.classList.remove("error-display")
+            //  errorDisplay.innerHTML = "Invalid park name"
+            //  userSearchForm.append(errorDisplay)
+             
 
         } else { 
-            //var errorDisplay = document.querySelector(".error-display")
-            //errorDisplay.classList.add("error-display")
             return response.json ()}
-        
      })  
              .then(data => {
             

@@ -7,6 +7,7 @@ body {
     flex-wrap: wrap;
     flex-direction:column ;
     margin: 0%;
+    background-color: rgb(228, 221, 212);
 
 }
 @media screen and (min-width: 770px) {
@@ -58,60 +59,76 @@ body {
     border-style:solid;
     border-color: black;
     border-radius: 7px;
-    background-color: gray;
+    background-color: rgb(199, 184, 184);
     color: black;
     text-align: center;
     opacity: 0.6;
     
 }
-.top {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
 .parkDetail{
     display:none;
+}
+.parkLocation{
+    color: rgb(63, 85, 131);    
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+}
+.parkLocation h3 {
+text-decoration: underline;
+}
+.parkLocation p {
+    font-size: 20px;
+}
+.parkLocation h2 {
+    font-size: 25px;
+}
+.parkLocation .parkDetail .detailLoaded {
+    text-align: center;
+    color: rgb(150, 79, 79);
+    
 }
 .parkDetailLoaded {
     text-align:center;
     display: table;
-    float:left;
-    background-image: url;
+    background-color: rgb(255, 255, 255);
     background-size:cover;
     opacity: 0.8;
-    color: black;
+    color: rgb(150, 79, 79);
     border-style: hidden;
+    margin: 0;
 }
 .detail{
     display:none;
 }
 
 .detailLoaded{
-    width: 33.33%;
+    text-align: center;
     padding: 15px;
-    color:black;
+    color: rgb(150, 79, 79);
+    margin: 0;
 }
 .currentDayWeather {
     display:none;
 }
 .currentDayWeatherLoaded {
-    background-color: blue;
+    background-color: rgb(252, 227, 116);
     height: fit-content;
     background-size: cover;
     background-position: center;
-    float: right;
+    float: left;
 }
 .forecast {
     display:none;
 }
 
 .forecastLoaded {
-    background-color: red;
+    background-color: rgb(179, 142, 24);
     height: fit-content;
     background-size: cover;
     background-position: center;
 }
 th{
-    font-size: 22px;
+    font-size: 20px;
 }
 }

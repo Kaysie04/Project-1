@@ -1,6 +1,4 @@
 
-// window.initMap = initMap;
-// export {};
 var getParkName = document.getElementById("getParkName")
 var getAddress= document.getElementById("getAddress")
 var getHours = document.getElementById("getHours")
@@ -8,6 +6,8 @@ var entranceFee = document.getElementById("getEntryFee")
 var parkWeatherInfo = document.getElementById("park-weather-info")
 var searchInputEl = document.getElementById("user-search")
 var searchBtn = document.getElementById("search-btn")
+var currentDayWeatherEl = document.querySelector(".currentDayWeather")
+var forecastEl = document.querySelector(".forecast")
 const APIKeyWeather = "a4d995d10a3e4d37b4522008221606"
 const APIKeyPark = "yVqeZRUKh9PqcUDw5hZeYAUCPybXvqL3cGbSjcIh"
 
@@ -35,6 +35,13 @@ function getPark (userSearch) {
             var lat = data.data[0].latitude
             var long = data.data[0].longitude
             var latLong = `${lat},${long}`
+
+                // remove css style display:none
+            currentDayWeatherEl.classList.remove("currentDayWeather")
+            currentDayWeatherEl.setAttribute("class", "currentDayWeatherLoaded")
+            forecastEl.classList.remove("forecast")
+            forecastEl.setAttribute("class", "forecastLoaded")
+            
              
             // create a variable and element for the park name and append it to the correct html div
             getParkName.innerHTML = data.data[0].fullName
@@ -137,7 +144,7 @@ storageInput.addEventListener('input', letter => {
 })
 
 const saveToLocalStorage = () => {
-    if (textinput.length >=4)
+    //if (textinput.length >=4)
     localStorage.setItem('textinput', text.textContent)
 }
 

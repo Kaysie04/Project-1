@@ -49,6 +49,21 @@ body {
 .button:hover {
     background-image:linear-gradient(to bottom right, #b30000, #ff3333, #ff8080);
 }
+
+
+.error-display {
+    display:none;
+}
+.error-DisplayLoaded{
+    border-style:solid;
+    border-color: black;
+    border-radius: 7px;
+    background-color: gray;
+    color: black;
+    text-align: center;
+    opacity: 0.6;
+    
+}
 .top {
     display: flex;
     flex-wrap: nowrap;
@@ -58,7 +73,7 @@ body {
     display:none;
 }
 .parkDetailLoaded {
-    text-align: center;
+    text-align:center;
     display: table;
     float:left;
     background-image: url;
@@ -72,10 +87,9 @@ body {
 }
 
 .detailLoaded{
-    float: left;
     width: 33.33%;
     padding: 15px;
-    color: black;
+    color:black;
 }
 .currentDayWeather {
     display:none;

@@ -26,10 +26,10 @@ function getPark (userSearch) {
     fetch( parkUrl, parkOptions)
     .then(response =>  {
         if (userSearch.length <=3) { 
-             var errorDisplay = document.getElementById("error-display")
-             //var searchFormEl = document.getElementById("search-form")
-             errorDisplay.innerHTML = "Invalid Park Name"
-             searchInputEl.reset() 
+             var errorDisplay = document.querySelector(".error-display")
+             errorDisplay.innerHTML = "Invalid park name"
+             errorDisplay.classList.remove("error-display")
+             errorDisplay.setAttribute("class", "error-DisplayLoaded")
         
         } else {return response.json ()}
      })  
@@ -149,7 +149,7 @@ storageInput.addEventListener('input', letter => {
 })
 
 const saveToLocalStorage = () => {
-    //if (textinput.length >=4)
+    //if (text.length >= 4)
     localStorage.setItem('textinput', text.textContent)
 }
 

@@ -64,14 +64,18 @@ body {
     background-image: url;
     background-size:cover;
     opacity: 0.8;
-    color: mistyrose;
+    color: black;
     border-style: hidden;
 }
-.detail {
+.detail{
+    display:none;
+}
+
+.detailLoaded{
     float: left;
     width: 33.33%;
     padding: 15px;
-    color: mistyrose;
+    color: black;
 }
 .currentDayWeather {
     display:none;

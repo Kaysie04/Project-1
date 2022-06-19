@@ -1,56 +1,28 @@
-* {
-    cursor: cell;
-    font-family: Lucida Sans Typewriter,Lucida Typewriter,sans-serif;
-}
 body {
+    padding: 2rem 0;
     display: flex;
     flex-wrap: wrap;
-    flex-direction:column ;
-    margin: 0%;
-    background-color: rgb(228, 221, 212);
-
+    flex-direction: column;
+    margin: 1rem;
 }
-@media screen and (min-width: 770px) {
+
+.header h1{
+    text-align:center;
+    color: #f2f2f2;
+}
+
+.header p {
+    text-align: center;
+    color: #f2f2f2;
+}
 
 .earth {
-    background-image: url("https://c.tenor.com/pwks_QPpbvoAAAAd/sky-night.gif"); /*url("https://media4.giphy.com/media/UTqVVxyukfeiUZ9EDa/giphy.gif");*/
+    background-image: url("https://c.tenor.com/pwks_QPpbvoAAAAd/sky-night.gif"); 
     height: fit-content;
     background-size: cover;
     background-position: center;
     margin: 0;
 }
-.header h1{
-    text-align:center;
-    font-size: 40px;
-    color: #f2f2f2;
-    margin-right: 20;
-}
-.header p {
-    text-align: center;
-    color: #f2f2f2;
-}
-.searchbar {
-    padding: 20px;
-    float: right;
-}
-
-#user-search {
-    border-radius: 7px
-}
-.button {
-    color: #ffe6e6;
-    background-image: linear-gradient(to bottom right, #0000ff, #3333ff, #4d4dff);
-    border-radius: 7px;
-}
-
-.button:active {
-    background-image: linear-gradient(to bottom right, #b30000, #ff3333, #ff8080);
-}
-
-.button:hover {
-    background-image:linear-gradient(to bottom right, #b30000, #ff3333, #ff8080);
-}
-
 
 .error-display {
     display:none;
@@ -59,76 +31,14 @@ body {
     border-style:solid;
     border-color: black;
     border-radius: 7px;
-    background-color: rgb(199, 184, 184);
+    background-color: gray;
     color: black;
     text-align: center;
-    opacity: 0.6;
-    
-}
-.parkDetail{
-    display:none;
-}
-.parkLocation{
-    color: rgb(63, 85, 131);    
-    text-align: center;
-    font-size: 30px;
-    margin: 0;
-}
-.parkLocation h3 {
-text-decoration: underline;
-}
-.parkLocation p {
-    font-size: 20px;
-}
-.parkLocation h2 {
-    font-size: 25px;
-}
-.parkLocation .parkDetail .detailLoaded {
-    text-align: center;
-    color: rgb(150, 79, 79);
-    
-}
-.parkDetailLoaded {
-    text-align:center;
-    display: table;
-    background-color: rgb(255, 255, 255);
-    background-size:cover;
-    opacity: 0.8;
-    color: rgb(150, 79, 79);
-    border-style: hidden;
-    margin: 0;
-}
-.detail{
-    display:none;
+    opacity: 0.6;   
 }
 
-.detailLoaded{
-    text-align: center;
-    padding: 15px;
-    color: rgb(150, 79, 79);
-    margin: 0;
-}
-.currentDayWeather {
-    display:none;
-}
-.currentDayWeatherLoaded {
-    background-color: rgb(252, 227, 116);
-    height: fit-content;
-    background-size: cover;
-    background-position: center;
-    float: left;
-}
-.forecast {
-    display:none;
+body h3, p {
+    margin: 2rem;
+    text-align: left;
 }
 
-.forecastLoaded {
-    background-color: rgb(179, 142, 24);
-    height: fit-content;
-    background-size: cover;
-    background-position: center;
-}
-th{
-    font-size: 20px;
-}
-}

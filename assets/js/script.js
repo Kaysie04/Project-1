@@ -91,11 +91,13 @@ function getPark (userSearch) {
 
                
                 //TODAY'S WEATHER
+                var todayTitle = document.getElementById("currentWeatherTitle")
+                todayTitle.textContent = "Today's Forecast"
 
-                var currentDateMoment = moment(data.forecast.forecastday[0].date).format('MMMM Do, YYYY')
+                //var currentDateMoment = moment(data.forecast.forecastday[0].date).format('MMMM Do, YYYY')
 
-                var currentDate = document.getElementById("current-date")
-                currentDate.innerHTML = `${currentDateMoment}`
+                //var currentDate = document.getElementById("current-date")
+                //currentDate.innerHTML = `${currentDateMoment}`
 
                 var currentTemp = document.getElementById("currentTemp")
                 currentTemp.innerHTML = ` Temp: ${data.current.temp_f} ${"\u00B0F"}`
@@ -106,11 +108,11 @@ function getPark (userSearch) {
              
                 // humidity
                 var humidity = document.getElementById("humidity")
-                humidity.innerHTML = ` Humidity: ${data.current.humidity}${"%"}`
+                //humidity.innerHTML = `Humidity: ${data.current.humidity}${"%"}`
     
                 // wind
                 var wind = document.getElementById("wind")
-                wind.innerHTML = ` Wind: ${data.current.wind_mph}${"mph"}`
+                wind.innerHTML = ` Wind Speed: ${data.current.wind_mph}${"mph"}`
 
                 // uv
                 var uvIndex = document.getElementById("uv")
@@ -161,10 +163,6 @@ function getPark (userSearch) {
             })
         })
 }
-   
-
-
-
 
 // fetch data based on park name search
 

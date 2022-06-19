@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 1</title>
+    <link rel="stylesheet" href ="assets/css/Skeleton-2.0.4">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href ="assets/css/Skeleton-2.0.4/">
+    
 </head>
 <!-- HEADER -->
 <header class="earth">
@@ -28,10 +29,11 @@
 
 <!-- BODY -->
 <body>
-<main>
+<main class="container">
     <div class="parkLocation">
-        <h3>PARK INFO</h3>
-        <div id="parkInfo" class="parkDetail">           
+        
+        <div id="parkInfo" class="parkDetail">  
+            <h3>PARK INFO</h3>         
             <div class="detail">
                 <h2 id="getParkName"></h2>
                 <p id="getAddress"></p>
@@ -50,58 +52,52 @@
                     </div>
                 </div>
             </div>
-    <div class="weatherInfo">
-        <div class="currentDayWeather">
-            <h2>Today</h2>
-        
-            <p id="currentWeather"></p>
-            <p id="currentTemp"></p>
-            <p id="feelsLike"></p>
-            <p id="humidity"></p>
-            <p id="wind"></p>
-            <p id="uv"></p>
-        </div>
-        <div class="weatherInfo">
-            <div class="currentDayWeather">
-                <h2>Today</h2>
-            
-                <p id="currentWeather"></p>
-                <p id="currentTemp"></p>
-                <p id="feelsLike"></p>
-                <p id="humidity"></p>
-                <p id="wind"></p>
-                <p id="uv"></p>
-            </div>
 
-        <table class="forecast u-full-width" >
-        <thead>
-            <tr >
-                <th id="day1"></th>
-                <th id="day2"></th>
-            </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <td id="weatherInfo1">
-                    <td id="day1-date"></td>
-                    <td id="day1-temp"></td>
-                    <td id="day1-humidity"></td>
-                    <td id="day1-wind"></td>
-                    <td id="day1-uv"></td>
+        <!--<div class="row weatherInfo">-->
+
+                <div class="row">
+                <div class="currentDayWeather">
+                    <h2>Today</h2>
                 
+                    <p id="currentWeather"></p>
+                    <p id="currentTemp"></p>
+                    <p id="feelsLike"></p>
+                    <p id="humidity"></p>
+                    <p id="wind"></p>
+                    <p id="uv"></p>
+                </div>
+                </div>
+        
+        
+
+            <table class="forecast u-full-width" >
+            <thead>
+                <tr >
+                    <th id="day1"></th>
+                    <th id="day2"></th>
                 </tr>
-                <tr>
-                <td id="weatherInfo2"></td>
-                    <td id="day2-date"></td>
-                    <td id="day2-temp"></td>
-                    <td id="day2-humidity"></td>
-                    <td id="day2-wind"></td>
-                    <td id="day2-uv"></td>
-                
-            </tr>
-            </tbody>
-    </table>
-    </div>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td id="weatherInfo1">
+                        <td id="day1-date"></td>
+                        <td id="day1-temp"></td>
+                        <td id="day1-humidity"></td>
+                        <td id="day1-wind"></td>
+                        <td id="day1-uv"></td>
+                    
+                    </tr>
+                    <tr>
+                    <td id="weatherInfo2"></td>
+                        <td id="day2-date"></td>
+                        <td id="day2-temp"></td>
+                        <td id="day2-humidity"></td>
+                        <td id="day2-wind"></td>
+                        <td id="day2-uv"></td>
+                    
+                </tr>
+                </tbody>
+        </table>
 </main>
 <script src="assets/js/script.js"></script>
 </body>

@@ -15,7 +15,7 @@ const APIKeyPark = "yVqeZRUKh9PqcUDw5hZeYAUCPybXvqL3cGbSjcIh"
 var searchHistory = []
 var userSearch = ""
 var userSearchForm = document.querySelector("#search-form")
-const parkOptions = {
+const options = {
     headers: {
         'X-Api-Key': `${APIKeyPark}`,
         'X-RapidAPI-Key': 'cadac08ed3msh40326c56fe6e32bp134535jsn59a066c9993d',
@@ -25,27 +25,23 @@ const parkOptions = {
 
 function getPark (userSearch) {
     var parkUrl = `https://jonahtaylor-national-park-service-v1.p.rapidapi.com/parks?parkCode=${userSearch}`
-    fetch( parkUrl, parkOptions)
+    fetch( parkUrl, options)
+
+    
     
     // error response for search values less than 4
     .then(response =>  {
        
         if (userSearch.length <=3) { 
             window.location.reload()
-            // var errorDisplay = document.createElement("p")
-            // errorDisplay.classList.add("error-DisplayLoaded")
-            // //errorDisplay.classList.remove("error-display")
-            //  errorDisplay.innerHTML = "Invalid park name"
-            //  userSearchForm.append(errorDisplay)
              
-
         } else { 
             return response.json ()}
      })  
              .then(data => {
-            
-            searchHistory.push(data.data[0].fullName)
-            localStorage.setItem("parkName", searchHistory)
+            console.log(data.data)
+            // searchHistory.push(data.data[0].fullName)
+            // localStorage.setItem("parkName", searchHistory)
             var lat = data.data[0].latitude
             var long = data.data[0].longitude
             var latLong = `${lat},${long}`
@@ -53,7 +49,8 @@ function getPark (userSearch) {
 
                 // remove css style display:none
             currentDayWeatherEl.classList.remove("currentDayWeather")
-            currentDayWeatherEl.setAttribute("class", "currentDayWeatherLoaded")
+            currentDayWeatherEl.setAttribute("id", "currentDayWeatherLoaded")
+            currentDayWeatherEl.setAttribute("class", "two columns")
             forecastEl.classList.remove("forecast")
             forecastEl.setAttribute("class", "forecastLoaded")
             parkDetailEl.classList.remove("parkDetail")
@@ -69,7 +66,10 @@ function getPark (userSearch) {
             var city = data.data[0].addresses[0].city
             var state = data.data[0].addresses[0].stateCode
             var postalCode = data.data[0].addresses[0].postalCode
-            getAddress.innerHTML = `Address: ${street} ${city} ${state} ${postalCode}`
+            var address = document.createElement("p")
+            address.classList.add("address-style")
+            address.textContent = `Address:`
+            getAddress.innerHTML = `${address} ${street} ${city} ${state} ${postalCode}`
 
             // create a variable and element for the park hours and append it to the correct html div
             getHours.innerHTML = `Park Hours: ${data.data[0].operatingHours[0].description}`

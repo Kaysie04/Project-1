@@ -115,8 +115,8 @@ function getPark (userSearch) {
                 // DAY 1 WEATHER
                 // let date = new Date(`${data.forecast.forecastday[1].date_epoch * 1000}`)
                 // console.log(date)
-                // // var dayOneDate = document.getElementById("day1-date")
-                // // dayOneDate.innerHTML =  date
+                var dayOneDate = document.getElementById("day1-date")
+                dayOneDate.innerHTML =  `${data.forecast.forecastday[1].date}`
                 
                 var dayOneTemp = document.getElementById("day1-temp")
                 dayOneTemp.innerHTML = ` Average Temp: ${data.forecast.forecastday[1].day.avgtemp_f}${"\u00B0F"}`

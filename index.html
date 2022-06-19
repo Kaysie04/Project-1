@@ -2,82 +2,96 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta http-equiv="X-UA-Compatible" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" integrity="sha512-5fsy+3xG8N/1PV5MIJz9ZsWpkltijBI48gBzQ/Z2eVATePGHOkMIn+xTDHIfTZFVb9GMpflF2wOWItqxAP2oLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href ="assets/css/Skeleton-2.0.4/">
 </head>
 <!-- HEADER -->
+<div class="container">
+    <div class="max-full-width">
 <header class="earth">
-    <div class="top">
         <div class="header">
             <h1 class="weatherTitle">NATIONAL PARK WEATHER</h1>
-            <p>TRAVEL AND KNOW WHAT TO PREPARE</p>
+            <p>TRAVEL AND KNOW HOW TO PREPARE</p>
         </div>
-        <div class="searchbar">
-            <form>
-                <input class="park-input" type="text" placeholder="Search Parks.." id=user-search>
+        <div class="searchbar u-pull-left">
+            <form id="search-form">
+                <p id="error-display"></p>
+                <input class="park-input" type="text" id=user-search>
                 <button class="button" id="search-btn">Search</button>
             </form>
         </div>
     </div>
+    </div>
 </header>
+
+
 <!-- BODY -->
 <body>
-<main class="row">
-    <div class="parkLocation">
-        <div id="parkInfo" class="parkInfo">
-            <h3>PARK INFO</h3>
-            <div>
-                <p id="getParkName"> </p>
-                <p id="getAddress"></p>
-                <p id="getHours"></p>
-                <p id="park-weather-info"></p>
-                <p id="getEntryFee"></p>
+<main>
+        <div class="row">
+            <div class="six columns">
+                <div class="parkLocation">
+                    <div id="parkInfo" class="parkDetail">
+                        <h3>Park Info</h3>
+
+                        <div class="detail">
+                            <p id="getParkName"></p>
+                            <p id="getAddress"></p>
+                            <p id="getHours"></p>
+                            <p id="park-weather-info"></p>
+                            <p id="getEntryFee"></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        <div class="map" id="map">
+
+        <div class ="six columns">
+        <div class="weatherInfo">
+            <div class="currentDayWeather">
+                <h3>Forecast</h3>
+            
+                <p id="currentWeather">Current Weather</p>
+                <p id="currentTemp"></p>
+                <p id="feelsLike"></p>
+                <p id="humidity"></p>
+                <p id="wind"></p>
+                <p id="uv"></p>
             </div>
         </div>
+
+            <table class="forecast" >
+
+           
+            <tbody>
+                <tr id="day1">
+                    <td id="weatherInfo1">
+                        <p id="day1-date"></p>
+                        <p id="day1-temp"></p>
+                        <p id="day1-humidity"></p>
+                        <p id="day1-wind"></p>
+                        <p id="day1-uv"></p>
+                    </td>
+                </tr>
+                <tr id="day2">
+                    <td id="weatherInfo2">
+                        <p id="day2-date"></p>
+                        <p id="day2-temp"></p>
+                        <p id="day2-humidity"></p>
+                        <p id="day2-wind"></p>
+                        <p id="day2-uv"></p>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
     </div>
-    <div class="map" id="map">
-        <!--<iframe
-  width="450"
-  height="250"
-  frameborder="0" style="border:0"
-  referrerpolicy="no-referrer-when-downgrade"
-  src="https://www.google.com/maps/"
-  allowfullscreen>
-</iframe>-->
-    </div>
-    <div class="weatherInfo">
-        <div class="currentDayWeather">
-            <h2>TODAYS FORECAST</h2>
-        </div>
-        <table class="u-ful-width" >
-        <thead>
-            <tr>
-                <th >DAY</th>
-                <th >TEMPATURE</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr id="day1">
-                <td id="weatherInfo1">day</td>
-            </tr>
-            <tr id="day2">
-                <td id="weatherInfo2">day</td>
-            </tr>
-            <tr id="day3">
-                <td id="weatherInfo3">day</td>
-            </tr>
-            <tr id="day4">
-                <td id="weatherInfo4">day</td>
-            </tr>
-            <tr id="day5">
-                <td id="weatherInfo5">day</td>
-            </tr>
-        </tbody>
-    </table>
-    </div>
+</div>
 </main>
 <script src="assets/js/script.js"></script>
 </body>

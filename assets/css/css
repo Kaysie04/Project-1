@@ -1,0 +1,114 @@
+* {
+    cursor: cell;
+    font-family: Lucida Sans Typewriter,Lucida Typewriter,sans-serif;
+}
+body {
+    
+
+}
+@media screen and (min-width: 770px) {
+
+.earth {
+    background-image: url("https://c.tenor.com/pwks_QPpbvoAAAAd/sky-night.gif"); /*url("https://media4.giphy.com/media/UTqVVxyukfeiUZ9EDa/giphy.gif");*/
+    height: fit-content;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+}
+.header h1{
+    text-align:center;
+    font-size: 40px;
+    color: #f2f2f2;
+    margin-right: 20;
+}
+.header p {
+    text-align: center;
+    color: #f2f2f2;
+}
+.searchbar {
+    padding: 20px;
+    float: right;
+}
+
+#user-search {
+    border-radius: 7px
+}
+.button {
+    color: #ffe6e6;
+    background-image: linear-gradient(to bottom right, #0000ff, #3333ff, #4d4dff);
+    border-radius: 7px;
+}
+
+.button:active {
+    background-image: linear-gradient(to bottom right, #b30000, #ff3333, #ff8080);
+}
+
+.button:hover {
+    background-image:linear-gradient(to bottom right, #b30000, #ff3333, #ff8080);
+}
+
+
+.error-display {
+    display:none;
+}
+.error-DisplayLoaded{
+    border-style:solid;
+    border-color: black;
+    border-radius: 7px;
+    background-color: gray;
+    color: black;
+    text-align: center;
+    opacity: 0.6;
+    
+}
+.top {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.parkDetail{
+    display:none;
+}
+.parkDetailLoaded {
+    text-align:center;
+    display: table;
+    float:left;
+    background-image: url;
+    background-size:cover;
+    opacity: 0.8;
+    color: black;
+    border-style: hidden;
+}
+.detail{
+    display:none;
+}
+
+.detailLoaded{
+    width: 33.33%;
+    padding: 15px;
+    color:black;
+}
+.currentDayWeather {
+    display:none;
+}
+.currentDayWeatherLoaded {
+    background-color: blue;
+    height: fit-content;
+    background-size: cover;
+    background-position: center;
+    float: right;
+}
+.forecast {
+    display:none;
+}
+
+.forecastLoaded {
+    background-color: red;
+    height: fit-content;
+    background-size: cover;
+    background-position: center;
+}
+th{
+    font-size: 22px;
+}
+}

@@ -9,7 +9,7 @@ The click event will pull up Park Info such as Park Address, Park Hours, Seasona
 # Screen Shot 
 
 # Why it's awesome
-NPIWD is simple and easy to use. It gives you all the information you need in one place to know exactly how to prepare for your next camping or hiking trip.
+NPIWD is simple and easy to use. It gives you all the information you need in one place to know exactly how to prepare for your next hiking trip.
 
 # Deployed URL
 

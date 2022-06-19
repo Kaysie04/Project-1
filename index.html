@@ -19,7 +19,6 @@
         </div>
         <div class="searchbar u-pull-left">
             <form id="search-form">
-                <p id="error-display"></p>
                 <input class="park-input" type="text" id=user-search>
                 <button class="button" id="search-btn">Search</button>
             </form>
@@ -28,15 +27,14 @@
     </div>
 </header>
 
-
 <!-- BODY -->
 <body>
 <main>
         <div class="row">
-            <div class="six columns">
+            <div id="park-columns" class="six columns">
                 <div class="parkLocation">
                     <div id="parkInfo" class="parkDetail">
-                        <h3>Park Info</h3>
+                        <h3>General Park Information</h3>
 
                         <div class="detail">
                             <p id="getParkName"></p>
@@ -51,10 +49,10 @@
             </div>
         <div class="map" id="map">
 
-        <div class ="six columns">
+        <div id="weather-columns" class ="six columns">
         <div class="weatherInfo">
             <div class="currentDayWeather">
-                <h3>Forecast</h3>
+                <h3>Park Weather</h3>
             
                 <p id="currentWeather">Current Weather</p>
                 <p id="currentTemp"></p>

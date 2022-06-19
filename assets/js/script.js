@@ -6,16 +6,14 @@ var entranceFee = document.getElementById("getEntryFee")
 var parkWeatherInfo = document.getElementById("park-weather-info")
 var searchInputEl = document.getElementById("user-search")
 var searchBtn = document.getElementById("search-btn")
-var currentDayWeatherEl = document.querySelector(".currentDayWeather")
-var forecastEl = document.querySelector(".forecast")
-var parkDetailEl= document.querySelector(".parkDetail")
-var detailEl = document.querySelector(".detail")
+var weatherColumns = document.querySelector("#weather-columns")
+var parkColumns = document.querySelector("#park-columns")
 const APIKeyWeather = "a4d995d10a3e4d37b4522008221606"
 const APIKeyPark = "yVqeZRUKh9PqcUDw5hZeYAUCPybXvqL3cGbSjcIh"
 var searchHistory = []
 var userSearch = ""
 var userSearchForm = document.querySelector("#search-form")
-const parkOptions = {
+const options = {
     headers: {
         'X-Api-Key': `${APIKeyPark}`,
         'X-RapidAPI-Key': 'cadac08ed3msh40326c56fe6e32bp134535jsn59a066c9993d',
@@ -25,25 +23,20 @@ const parkOptions = {
 
 function getPark (userSearch) {
     var parkUrl = `https://jonahtaylor-national-park-service-v1.p.rapidapi.com/parks?parkCode=${userSearch}`
-    fetch( parkUrl, parkOptions)
+    fetch( parkUrl, options)
+
+    
     
     // error response for search values less than 4
     .then(response =>  {
        
         if (userSearch.length <=3) { 
             window.location.reload()
-            // var errorDisplay = document.createElement("p")
-            // errorDisplay.classList.add("error-DisplayLoaded")
-            // //errorDisplay.classList.remove("error-display")
-            //  errorDisplay.innerHTML = "Invalid park name"
-            //  userSearchForm.append(errorDisplay)
              
-
         } else { 
             return response.json ()}
      })  
              .then(data => {
-            
             searchHistory.push(data.data[0].fullName)
             localStorage.setItem("parkName", searchHistory)
             var lat = data.data[0].latitude
@@ -51,15 +44,10 @@ function getPark (userSearch) {
             var latLong = `${lat},${long}`
 
 
-                // remove css style display:none
-            currentDayWeatherEl.classList.remove("currentDayWeather")
-            currentDayWeatherEl.setAttribute("class", "currentDayWeatherLoaded")
-            forecastEl.classList.remove("forecast")
-            forecastEl.setAttribute("class", "forecastLoaded")
-            parkDetailEl.classList.remove("parkDetail")
-            parkDetailEl.setAttribute("class", "parkDetailLoaded")
-            detailEl.classList.remove("detail")
-            detailEl.setAttribute("class" ,"detailLoaded")
+            // remove css style display:none
+                weatherColumns.removeAttribute("id", "weather-columns")
+                parkColumns.removeAttribute("id", "park-columns")
+
                        
             // create a variable and element for the park name and append it to the correct html div
             getParkName.innerHTML = data.data[0].fullName
@@ -69,7 +57,10 @@ function getPark (userSearch) {
             var city = data.data[0].addresses[0].city
             var state = data.data[0].addresses[0].stateCode
             var postalCode = data.data[0].addresses[0].postalCode
-            getAddress.innerHTML = `Address: ${street} ${city} ${state} ${postalCode}`
+            var address = document.createElement("p")
+            address.classList.add("address-style")
+            address.textContent = `Address:`
+            getAddress.innerHTML = `${address} ${street} ${city} ${state} ${postalCode}`
 
             // create a variable and element for the park hours and append it to the correct html div
             getHours.innerHTML = `Park Hours: ${data.data[0].operatingHours[0].description}`

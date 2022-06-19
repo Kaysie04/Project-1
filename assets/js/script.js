@@ -65,21 +65,18 @@ function getPark (userSearch) {
             var city = data.data[0].addresses[0].city
             var state = data.data[0].addresses[0].stateCode
             var postalCode = data.data[0].addresses[0].postalCode
-            var address = document.createElement("p")
-            address.classList.add("address-style")
-            address.textContent = `Address:`
-            getAddress.innerHTML = `${address} ${street} ${city} ${state} ${postalCode}`
+            getAddress.innerHTML = `<p id = "park-address-style"> Address </p> ${street} ${city} ${state} ${postalCode}`
 
             // create a variable and element for the park hours and append it to the correct html div
-            getHours.innerHTML = `Park Hours: ${data.data[0].operatingHours[0].description}`
+            getHours.innerHTML = `<p id = "park-hours-style"> Park Hours </p> ${data.data[0].operatingHours[0].description}`
 
             // create a variable and element for the park weather description from park API and append it to the correct html div
-            parkWeatherInfo.innerHTML = `Seasonal Weather Info: ${data.data[0].weatherInfo}`
+            parkWeatherInfo.innerHTML =  ` <p id = "seasonal-weather-style"> Seasonal Weather Information </p> ${data.data[0].weatherInfo}`
 
               //var entranceFee = document.createElement("p")
               var parkCost = data.data[0].entranceFees[0].cost
               var parkDescription = data.data[0].entranceFees[0].description
-              getEntryFee.innerHTML = `Entrance Fee: $${parkCost} ${parkDescription}`
+              getEntryFee.innerHTML = `<p id ="entrance-fee-style"> Entrance Fee </p> $${parkCost} ${parkDescription}`
 
               
         var weatherUrl = `http://api.weatherapi.com/v1/forecast.json?key=${APIKeyWeather}&q=${latLong}&days=7`

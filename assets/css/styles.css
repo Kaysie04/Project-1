@@ -53,3 +53,11 @@ body h3, p {
     border-radius: 7px;
 }
 
+#park-address-style, #park-hours-style, #seasonal-weather-style, #entrance-fee-style {
+    font-size:20px;
+}
+
+#park-name-style {
+    font-size: 30px;
+}
+

@@ -37,6 +37,7 @@ function getPark (userSearch) {
             return response.json ()}
      })  
              .then(data => {
+                // save to storage when search button is clicked
             searchHistory.push(data.data[0].fullName)
             localStorage.setItem("parkName", searchHistory)
             var lat = data.data[0].latitude
@@ -52,38 +53,37 @@ function getPark (userSearch) {
                 dayOneWeatherDisplay.setAttribute("id", "day1-weather-display")
                 dayTwoWeatherDisplay = document.getElementById("day2-weather-placeholder")
                 dayTwoWeatherDisplay.setAttribute("id", "day2-weather-display")
-
                 parkColumns.removeAttribute("id", "park-columns")
                
 
                        
             // create a variable and element for the park name and append it to the correct html div
-            getParkName.innerHTML = data.data[0].fullName
+            var parkName = data.data[0].fullName
+            getParkName.innerHTML= parkName
+            getParkName.setAttribute("id", "park-name-style")
 
             // create a variable and element for the park address and append it to the correct html div
             var street = data.data[0].addresses[0].line1
             var city = data.data[0].addresses[0].city
             var state = data.data[0].addresses[0].stateCode
             var postalCode = data.data[0].addresses[0].postalCode
-            var address = document.createElement("p")
-            address.classList.add("address-style")
-            address.textContent = `Address:`
-            getAddress.innerHTML = `${address} ${street} ${city} ${state} ${postalCode}`
+            getAddress.innerHTML = `<p id = "park-address-style"> Address </p> ${street} ${city} ${state} ${postalCode}`
 
             // create a variable and element for the park hours and append it to the correct html div
-            getHours.innerHTML = `Park Hours: ${data.data[0].operatingHours[0].description}`
+            getHours.innerHTML = `<p id = "park-hours-style"> Park Hours </p> ${data.data[0].operatingHours[0].description}`
 
             // create a variable and element for the park weather description from park API and append it to the correct html div
-            parkWeatherInfo.innerHTML = `Seasonal Weather Info: ${data.data[0].weatherInfo}`
+            parkWeatherInfo.innerHTML =  ` <p id = "seasonal-weather-style"> Seasonal Weather Information </p> ${data.data[0].weatherInfo}`
 
               //var entranceFee = document.createElement("p")
               var parkCost = data.data[0].entranceFees[0].cost
               var parkDescription = data.data[0].entranceFees[0].description
-              getEntryFee.innerHTML = `Entrance Fee: $${parkCost} ${parkDescription}`
+              getEntryFee.innerHTML = `<p id ="entrance-fee-style"> Entrance Fee </p> $${parkCost} ${parkDescription}`
 
               
+        // get data from weather API
         var weatherUrl = `http://api.weatherapi.com/v1/forecast.json?key=${APIKeyWeather}&q=${latLong}&days=7`
-
+        
         fetch(weatherUrl)
             .then(response => {
                 return response.json() })
@@ -91,7 +91,12 @@ function getPark (userSearch) {
 
                
                 //TODAY'S WEATHER
-               
+
+                var currentDateMoment = moment(data.forecast.forecastday[0].date).format('MMMM Do, YYYY')
+
+                var currentDate = document.getElementById("current-date")
+                currentDate.innerHTML = `${currentDateMoment}`
+
                 var currentTemp = document.getElementById("currentTemp")
                 currentTemp.innerHTML = ` Temp: ${data.current.temp_f} ${"\u00B0F"}`
         
@@ -112,10 +117,11 @@ function getPark (userSearch) {
                 uvIndex.innerHTML = `UV Index: ${data.current.uv}`
 
                 // DAY 1 WEATHER
-                // let date = new Date(`${data.forecast.forecastday[1].date_epoch * 1000}`)
-                // console.log(date)
+                
+                var dayOneDateMoment = moment(data.forecast.forecastday[1].date).format('MMMM Do, YYYY')
+
                 var dayOneDate = document.getElementById("day1-date")
-                dayOneDate.innerHTML =  `${data.forecast.forecastday[1].date}`
+                dayOneDate.innerHTML = `${dayOneDateMoment}`
                 
                 var dayOneTemp = document.getElementById("day1-temp")
                 dayOneTemp.innerHTML = ` Average Temp: ${data.forecast.forecastday[1].day.avgtemp_f}${"\u00B0F"}`
@@ -131,9 +137,11 @@ function getPark (userSearch) {
 
                  // DAY 2 WEATHER
 
-                 var dayTwoDate = document.getElementById("day2-date")
-                 dayTwoDate.innerHTML = `${data.forecast.forecastday[2].date}`
- 
+                 var dayTwoDateMoment = moment(data.forecast.forecastday[2].date).format('MMMM Do, YYYY')
+
+                var dayTwoDate = document.getElementById("day2-date")
+                dayTwoDate.innerHTML = `${dayTwoDateMoment}`
+
                  var dayTwoTemp = document.getElementById("day2-temp")
                  dayTwoTemp.innerHTML = ` Average Temp: ${data.forecast.forecastday[2].day.avgtemp_f}${"\u00B0F"}`
  
@@ -155,7 +163,7 @@ function getPark (userSearch) {
 }
    
 
-// save to storage when search button is clicked
+
 
 
 // fetch data based on park name search

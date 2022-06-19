@@ -12,7 +12,7 @@ The click event will pull up Park Info such as Park Address, Park Hours, Seasona
 NPIWD is simple and easy to use. It gives you all the information you need in one place to know exactly how to prepare for your next hiking trip.
 
 # Deployed URL
-
+https://kaysie04.github.io/Project-1/
 
 # License 
 All parts of NPIWD are free to use and abuse under the open-source MIT License.

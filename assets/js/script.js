@@ -91,7 +91,12 @@ function getPark (userSearch) {
 
                
                 //TODAY'S WEATHER
-               
+
+                var currentDateMoment = moment(data.forecast.forecastday[0].date).format('MMMM Do, YYYY')
+
+                var currentDate = document.getElementById("current-date")
+                currentDate.innerHTML = `${currentDateMoment}`
+
                 var currentTemp = document.getElementById("currentTemp")
                 currentTemp.innerHTML = ` Temp: ${data.current.temp_f} ${"\u00B0F"}`
         
@@ -112,10 +117,11 @@ function getPark (userSearch) {
                 uvIndex.innerHTML = `UV Index: ${data.current.uv}`
 
                 // DAY 1 WEATHER
-                // let date = new Date(`${data.forecast.forecastday[1].date_epoch * 1000}`)
-                // console.log(date)
+                
+                var dayOneDateMoment = moment(data.forecast.forecastday[1].date).format('MMMM Do, YYYY')
+
                 var dayOneDate = document.getElementById("day1-date")
-                dayOneDate.innerHTML =  `${data.forecast.forecastday[1].date}`
+                dayOneDate.innerHTML = `${dayOneDateMoment}`
                 
                 var dayOneTemp = document.getElementById("day1-temp")
                 dayOneTemp.innerHTML = ` Average Temp: ${data.forecast.forecastday[1].day.avgtemp_f}${"\u00B0F"}`
@@ -131,9 +137,11 @@ function getPark (userSearch) {
 
                  // DAY 2 WEATHER
 
-                 var dayTwoDate = document.getElementById("day2-date")
-                 dayTwoDate.innerHTML = `${data.forecast.forecastday[2].date}`
- 
+                 var dayTwoDateMoment = moment(data.forecast.forecastday[2].date).format('MMMM Do, YYYY')
+
+                var dayTwoDate = document.getElementById("day2-date")
+                dayTwoDate.innerHTML = `${dayTwoDateMoment}`
+
                  var dayTwoTemp = document.getElementById("day2-temp")
                  dayTwoTemp.innerHTML = ` Average Temp: ${data.forecast.forecastday[2].day.avgtemp_f}${"\u00B0F"}`
  

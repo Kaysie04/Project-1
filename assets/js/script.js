@@ -37,6 +37,7 @@ function getPark (userSearch) {
             return response.json ()}
      })  
              .then(data => {
+                // save to storage when search button is clicked
             searchHistory.push(data.data[0].fullName)
             localStorage.setItem("parkName", searchHistory)
             var lat = data.data[0].latitude
@@ -52,13 +53,14 @@ function getPark (userSearch) {
                 dayOneWeatherDisplay.setAttribute("id", "day1-weather-display")
                 dayTwoWeatherDisplay = document.getElementById("day2-weather-placeholder")
                 dayTwoWeatherDisplay.setAttribute("id", "day2-weather-display")
-
                 parkColumns.removeAttribute("id", "park-columns")
                
 
                        
             // create a variable and element for the park name and append it to the correct html div
-            getParkName.innerHTML = data.data[0].fullName
+            var parkName = data.data[0].fullName
+            getParkName.innerHTML= parkName
+            getParkName.setAttribute("id", "park-name-style")
 
             // create a variable and element for the park address and append it to the correct html div
             var street = data.data[0].addresses[0].line1
@@ -79,8 +81,9 @@ function getPark (userSearch) {
               getEntryFee.innerHTML = `<p id ="entrance-fee-style"> Entrance Fee </p> $${parkCost} ${parkDescription}`
 
               
+        // get data from weather API
         var weatherUrl = `http://api.weatherapi.com/v1/forecast.json?key=${APIKeyWeather}&q=${latLong}&days=7`
-
+        
         fetch(weatherUrl)
             .then(response => {
                 return response.json() })
@@ -160,7 +163,7 @@ function getPark (userSearch) {
 }
    
 
-// save to storage when search button is clicked
+
 
 
 // fetch data based on park name search

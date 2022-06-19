@@ -29,20 +29,17 @@ body {
     margin: 0%;
 }
 
-.error-display {
-    display:none;
-}
-.error-DisplayLoaded{
-    border-style:solid;
-    border-color: black;
-    border-radius: 7px;
-    background-color: gray;
-    color: black;
-    text-align: center;
-    opacity: 0.6;   
-}
-
 body h3, p {
     margin: 2rem;
     text-align: left;
 }
+
+#weather-columns {
+    display:none;
+}
+
+#park-columns{
+    display:none;
+}
+
+

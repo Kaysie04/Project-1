@@ -6,10 +6,8 @@ var entranceFee = document.getElementById("getEntryFee")
 var parkWeatherInfo = document.getElementById("park-weather-info")
 var searchInputEl = document.getElementById("user-search")
 var searchBtn = document.getElementById("search-btn")
-var currentDayWeatherEl = document.querySelector(".currentDayWeather")
-var forecastEl = document.querySelector(".forecast")
-var parkDetailEl= document.querySelector(".parkDetail")
-var detailEl = document.querySelector(".detail")
+var weatherColumns = document.querySelector("#weather-columns")
+var parkColumns = document.querySelector("#park-columns")
 const APIKeyWeather = "a4d995d10a3e4d37b4522008221606"
 const APIKeyPark = "yVqeZRUKh9PqcUDw5hZeYAUCPybXvqL3cGbSjcIh"
 var searchHistory = []
@@ -39,24 +37,17 @@ function getPark (userSearch) {
             return response.json ()}
      })  
              .then(data => {
-            console.log(data.data)
-            // searchHistory.push(data.data[0].fullName)
-            // localStorage.setItem("parkName", searchHistory)
+            searchHistory.push(data.data[0].fullName)
+            localStorage.setItem("parkName", searchHistory)
             var lat = data.data[0].latitude
             var long = data.data[0].longitude
             var latLong = `${lat},${long}`
 
 
-                // remove css style display:none
-            currentDayWeatherEl.classList.remove("currentDayWeather")
-            currentDayWeatherEl.setAttribute("id", "currentDayWeatherLoaded")
-            currentDayWeatherEl.setAttribute("class", "two columns")
-            forecastEl.classList.remove("forecast")
-            forecastEl.setAttribute("class", "forecastLoaded")
-            parkDetailEl.classList.remove("parkDetail")
-            parkDetailEl.setAttribute("class", "parkDetailLoaded")
-            detailEl.classList.remove("detail")
-            detailEl.setAttribute("class" ,"detailLoaded")
+            // remove css style display:none
+                weatherColumns.removeAttribute("id", "weather-columns")
+                parkColumns.removeAttribute("id", "park-columns")
+
                        
             // create a variable and element for the park name and append it to the correct html div
             getParkName.innerHTML = data.data[0].fullName

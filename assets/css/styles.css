@@ -1,9 +1,11 @@
 body {
-    padding: 2rem 0;
+    padding:0;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    margin: 1rem;
+    margin:0;
+    background-color: #7f8c83;
+   
 }
 
 .header h1{
@@ -36,5 +38,3 @@ body h3, p {
 #park-columns{
     display:none;
 }
-
-

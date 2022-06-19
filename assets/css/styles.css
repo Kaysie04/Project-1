@@ -1,27 +1,32 @@
 body {
-    padding: 2rem 0;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    margin: 1rem;
+    margin: 0;
+    background-color: #7f8c83;
 }
 
 .header h1{
     text-align:center;
     color: #f2f2f2;
 }
-
+#search-btn {
+    background-color: rgb(124, 112, 85);
+}
+#search-btn:hover {
+    background-color: rgb(206, 137, 48);
+}
 .header p {
     text-align: center;
     color: #f2f2f2;
 }
-
 .earth {
     background-image: url("https://c.tenor.com/pwks_QPpbvoAAAAd/sky-night.gif"); 
     height: fit-content;
     background-size: cover;
     background-position: center;
-    margin: 0;
+    margin: 0%;
 }
 
 .error-display {
@@ -41,4 +46,3 @@ body h3, p {
     margin: 2rem;
     text-align: left;
 }
-

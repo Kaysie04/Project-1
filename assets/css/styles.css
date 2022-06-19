@@ -38,3 +38,18 @@ body h3, p {
 #park-columns{
     display:none;
 }
+
+#current-weather-display {
+    border-style: solid;
+    border-radius: 7px;
+}
+#day1-weather-display {
+    border-style: solid;
+    border-radius: 7px;
+}
+
+#day2-weather-display {
+    border-style: solid;
+    border-radius: 7px;
+}
+

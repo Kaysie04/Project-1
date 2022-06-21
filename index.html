@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <!-- HEADER -->
-<div class="container">
-    <div class="max-full-width">
+<div class="row">
+    <div class="twelve columns">
 <header class="earth">
         <div class="header">
             <h1 class="weatherTitle">NATIONAL PARK WEATHER</h1>
             <p>TRAVEL AND KNOW HOW TO PREPARE</p>
         </div>
-        <div class="searchbar u-pull-left">
+        <div class="searchbar u-pull-center">
             <form id="search-form">
                 <input class="park-input" type="text" id=user-search>
                 <button class="button" id="search-btn">Search</button>
@@ -29,7 +29,7 @@
 
 <!-- BODY -->
 <body>
-<main>
+<main class="container">
         <div class="row">
             <div id="park-columns" class="six columns">
                 <div class="parkLocation">
@@ -51,46 +51,41 @@
 
         <div id="weather-columns" class ="six columns">
         <div class="weatherInfo">
-            <div class="currentDayWeather">
                 <h3>Park Weather</h3>
-            
-                <p id="currentWeather">Current Weather</p>
-                <p id="currentTemp"></p>
-                <p id="feelsLike"></p>
-                <p id="humidity"></p>
-                <p id="wind"></p>
-                <p id="uv"></p>
-            </div>
+
+                <div id = "current-weather-placeholder">
+                    <p id="currentWeatherTitle"></p>
+                    <p id="current-date"></p>
+                    <p id="currentTemp"></p>
+                    <p id="feelsLike"></p>
+                    <p id = "wind"> </p>
+                    <p id="uv"></p>
+                </div>
         </div>
-
-            <table class="forecast" >
-
-           
-            <tbody>
-                <tr id="day1">
-                    <td id="weatherInfo1">
+          
+                <div id="day1-weather-placeholder">
                         <p id="day1-date"></p>
                         <p id="day1-temp"></p>
                         <p id="day1-humidity"></p>
                         <p id="day1-wind"></p>
                         <p id="day1-uv"></p>
-                    </td>
-                </tr>
-                <tr id="day2">
-                    <td id="weatherInfo2">
+                </div>
+               
+                <div id="day2-weather-placeholder">
                         <p id="day2-date"></p>
                         <p id="day2-temp"></p>
                         <p id="day2-humidity"></p>
                         <p id="day2-wind"></p>
                         <p id="day2-uv"></p>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
+                </div>
     </div>
 </div>
 </main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+            integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="assets/js/script.js"></script>
+<script src="https://kit.fontawesome.com/f37269f716.js" crossorigin="anonymous"></script>
 </body>
 </html>

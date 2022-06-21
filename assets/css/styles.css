@@ -1,19 +1,20 @@
 body {
-    padding: 2rem 0;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    margin: 1rem;
+    margin:0;
+    background-color: rgb(127, 140, 131, 0.7)   
 }
 
 .header h1{
     text-align:center;
-    color: #f2f2f2;
+    color: #AEB376;
 }
 
 .header p {
     text-align: center;
-    color: #f2f2f2;
+    color: #FCFDF2;
 }
 
 .earth {
@@ -37,4 +38,34 @@ body h3, p {
     display:none;
 }
 
+#current-weather-display {
+    border-style: solid;
+    border-radius: 7px;
+    background:#e5e8e6 ;
+    color: black;
+}
+#day1-weather-display {
+    border-style: solid;
+    border-radius: 7px;
+    background: #e5e8e6;
+    color: black;
+}
 
+#day2-weather-display {
+    border-style: solid;
+    border-radius: 7px;
+    background: #e5e8e6;
+    color: black;
+}
+
+#park-address-style, #park-hours-style, #seasonal-weather-style, #entrance-fee-style {
+    font-size:20px;
+}
+
+#park-name-style {
+    font-size: 30px;
+}
+#currentWeatherTitle, #day2-date, #day1-date, #current-date {
+    font-size: 20px;
+
+}

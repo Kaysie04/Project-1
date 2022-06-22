@@ -69,3 +69,11 @@ body h3, p {
     font-size: 20px;
 
 }
+
+.button {
+    background-color: #e5e8e6;
+}
+
+.button:hover {
+    background-color: rgb(127, 140, 131, 0.7);
+}

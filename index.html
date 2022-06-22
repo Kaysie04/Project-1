@@ -8,6 +8,7 @@
     <title>Project 1</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" integrity="sha512-5fsy+3xG8N/1PV5MIJz9ZsWpkltijBI48gBzQ/Z2eVATePGHOkMIn+xTDHIfTZFVb9GMpflF2wOWItqxAP2oLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/styles.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <!-- HEADER -->
 <div class="row">
@@ -29,7 +30,7 @@
 
 <!-- BODY -->
 <body>
-<main>
+<main class="container">
         <div class="row">
             <div id="park-columns" class="six columns">
                 <div class="parkLocation">
@@ -50,46 +51,41 @@
 
         <div id="weather-columns" class ="six columns">
         <div class="weatherInfo">
-            <div class="currentDayWeather">
                 <h3>Park Weather</h3>
-            
-                <p id="currentWeather">Current Weather</p>
-                <p id="currentTemp"></p>
-                <p id="feelsLike"></p>
-                <p id="humidity"></p>
-                <p id="wind"></p>
-                <p id="uv"></p>
-            </div>
+
+                <div id = "current-weather-placeholder">
+                    <p id="currentWeatherTitle"></p>
+                    <p id="current-date"></p>
+                    <p id="currentTemp"></p>
+                    <p id="feelsLike"></p>
+                    <p id = "wind"> </p>
+                    <p id="uv"></p>
+                </div>
         </div>
-
-            <table class="forecast" >
-
-           
-            <tbody>
-                <tr id="day1">
-                    <td id="weatherInfo1">
+          
+        <div id="day1-weather-placeholder">
                         <p id="day1-date"></p>
                         <p id="day1-temp"></p>
                         <p id="day1-humidity"></p>
                         <p id="day1-wind"></p>
                         <p id="day1-uv"></p>
-                    </td>
-                </tr>
-                <tr id="day2">
-                    <td id="weatherInfo2">
+                </div>
+               
+                <div id="day2-weather-placeholder">
                         <p id="day2-date"></p>
                         <p id="day2-temp"></p>
                         <p id="day2-humidity"></p>
                         <p id="day2-wind"></p>
                         <p id="day2-uv"></p>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-    </div>
+                </div>
+    </div> 
 
 </main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+            integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="assets/js/script.js"></script>
+<script src="https://kit.fontawesome.com/f37269f716.js" crossorigin="anonymous"></script>
 </body>
 </html>

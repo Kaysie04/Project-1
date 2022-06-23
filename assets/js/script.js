@@ -82,7 +82,7 @@ function getPark (userSearch) {
 
               
         // get data from weather API
-        var weatherUrl = `http://api.weatherapi.com/v1/forecast.json?key=${APIKeyWeather}&q=${latLong}&days=7`
+        var weatherUrl = `https://api.weatherapi.com/v1/forecast.json?key=${APIKeyWeather}&q=${latLong}&days=7`
         
         fetch(weatherUrl)
             .then(response => {

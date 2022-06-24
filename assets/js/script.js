@@ -44,7 +44,6 @@ function getPark (userSearch) {
             var long = data.data[0].longitude
             var latLong = `${lat},${long}`
 
-
             // remove css style display:none
                 weatherColumns.removeAttribute("id", "weather-columns")
                 currentWeatherDisplay = document.querySelector("#current-weather-placeholder")

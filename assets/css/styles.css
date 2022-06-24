@@ -38,20 +38,20 @@ body h3, p {
     display:none;
 }
 
-#current-weather-display {
+.current-weather-display {
     border-style: solid;
     border-radius: 7px;
     background:#e5e8e6 ;
     color: black;
 }
-#day1-weather-display {
+.day1-weather-display {
     border-style: solid;
     border-radius: 7px;
     background: #e5e8e6;
     color: black;
 }
 
-#day2-weather-display {
+.day2-weather-display {
     border-style: solid;
     border-radius: 7px;
     background: #e5e8e6;

@@ -48,11 +48,11 @@ function getPark (userSearch) {
             // remove css style display:none
                 weatherColumns.removeAttribute("id", "weather-columns")
                 currentWeatherDisplay = document.querySelector("#current-weather-placeholder")
-                currentWeatherDisplay.setAttribute("id", "current-weather-display")
+                currentWeatherDisplay.setAttribute("class", "current-weather-display")
                 dayOneWeatherDisplay = document.getElementById("day1-weather-placeholder")
-                dayOneWeatherDisplay.setAttribute("id", "day1-weather-display")
+                dayOneWeatherDisplay.setAttribute("class", "day1-weather-display")
                 dayTwoWeatherDisplay = document.getElementById("day2-weather-placeholder")
-                dayTwoWeatherDisplay.setAttribute("id", "day2-weather-display")
+                dayTwoWeatherDisplay.setAttribute("class", "day2-weather-display")
                 parkColumns.removeAttribute("id", "park-columns")
                
 
